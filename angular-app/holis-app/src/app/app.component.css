@@ -1,0 +1,17 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #4e78d3;
+}
+
+.container>h1 {
+  color: white;
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-family: Monaco, "Lucida Console", monospace;
+}

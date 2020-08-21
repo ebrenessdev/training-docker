@@ -1,0 +1,13 @@
+version: '3'
+services:
+  holis-app:
+    container_name: holis-app
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "4200:4200"
+    volumes:
+      - /usr/holis/node_modules
+      - ./holis-app:/usr/holis
+    stdin_open: true

@@ -1,0 +1,17 @@
+FROM node:alpine AS builder
+
+WORKDIR '/usr/holis'
+
+# dependencies
+COPY ./holis-app/package.json .
+RUN npm install
+
+# source code
+COPY ./holis-app .
+
+# build
+RUN npm run-script build
+
+FROM nginx:alpine
+
+COPY --from=builder /usr/holis/dist/holis-app /usr/share/nginx/html

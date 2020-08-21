@@ -1,0 +1,10 @@
+FROM node:alpine
+
+WORKDIR '/usr/holis'
+
+COPY ./holis-app/package.json .
+RUN npm install
+
+RUN npm install -g @angular/cli @angular-devkit/build-angular
+
+CMD ["npm", "start"]
